@@ -56,15 +56,21 @@
 			<div class="row">
 				<div class="col-md-12">
 					<form>
-						<input class="form-control"
-							placeholder="filtrar pelo nome do título">
+						<div class="form-group">
+							<label for="filtroNome">Filtro por Nome</label> <input
+								id="filtroNome" class="form-control"
+								placeholder="filtrar pelo nome do título" ng-model="filtroNome" 
+								ng-model-options="{debounce: 1000}">
+						</div>
 					</form>
 				</div>
 				<!-- fim col-md-12 -->
 			</div>
-
 			<!-- fim row -->
-			<tesouro-direto-item ng-repeat="tituloTD in titulosTD"
+
+			<!-- https://docs.angularjs.org/api/ng/filter/filter -->
+			<tesouro-direto-item
+				ng-repeat="tituloTD in titulosTD | filter:{nome:filtroNome}:false"
 				id="{{tituloTD.id}}" nome="{{tituloTD.nome}}"
 				tipo="{{tituloTD.tipo}}"> </tesouro-direto-item>
 

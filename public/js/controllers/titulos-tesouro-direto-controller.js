@@ -2,7 +2,7 @@ angular.module("ljbm").controller("TitulosTesouroDiretoController",
 
 function($scope, $http) { // , "ngResource"
 	$scope.titulo = 'Titulos TD';
-	$scope.filtro = '';
+	$scope.filtroNome = '';
 
 	$scope.titulosTD = []
 	// var recurso =
