@@ -1,18 +1,30 @@
-<div class="col-md-2">
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title text-center">id: {{id}}</h3>
-		</div>
-		<div class="panel-body" style="background-color: gray">
-			Nome: <output>{{nome}}</output>
-			<br>
-			Tipo: <output>{{tipo}}</output>
-		</div>
-		<!-- fim panel-body -->
+<style>
+<!--
+dl {
+	background-color: gray;
+}
+
+dt {
+	float: left;
+	margin-right: 10px;
+}
+-->
+</style>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title text-center">id: {{id}}</h3>
 	</div>
-	<!-- fim panel panel-default -->
+	<div class="panel-body">
+		<dl>
+			<dt>Nome:</dt>
+			<dd>{{nome}}</dd>
+			<dt>Tipo:</dt>
+			<dd>{{tipo}}</dd>
+		</dl>
+	</div>
+</div>
 
 <!-- 	<ol> -->
 <!-- 		<li ng-repeat="tituloTD in titulosTD">{{tituloTD.nome}}</li> -->
 <!-- 	</ol> -->
-</div>

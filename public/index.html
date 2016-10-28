@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br" ng-app="ljbm">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
@@ -14,6 +13,7 @@
 <link rel="stylesheet" href="css/ljbm.css">
 
 <script src="js/lib/angular.min.js"></script>
+<script src="js/lib/angular-route.min.js"></script>
 <script src="js/lib/angular-resource.min.js"></script>
 <script src="js/lib/jquery.js"></script>
 <script src="js/lib/bootstrap.js"></script>
@@ -21,10 +21,10 @@
 <script src="js/main.js"></script>
 <script src="js/controllers/titulos-tesouro-direto-controller.js"></script>
 <script src="js/directives/minhas-diretivas.js"></script>
-
 </head>
 
 <body>
+
 	<header class="container">
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-header" style="float: left">
@@ -36,45 +36,19 @@
 				<span class="glyphicon glyphicon-align-justify"></span>
 			</button>
 			<ul class="nav navbar-nav collapse navbar-collapse">
-				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
-				<li><a href="#" id="Ajuda"><span
+				<li><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li><a href="/ajuda" id="Ajuda"><span
 						class="glyphicon glyphicon-question-sign"></span></a></li>
-				<li><a href="#" id="TitulosTD"><span
+				<li><a href="/titulosTD" id="TitulosTD"><span
 						class="glyphicon glyphicon-list-alt"></span></a></li>
-				<li><a href="#" id="Aplicacoes"><span
+				<li><a href="/aplicacoes" id="Aplicacoes"><span
 						class="glyphicon glyphicon-bullhorn"></span></a></li>
 			</ul>
 		</nav>
 	</header>
 
 	<div id="corpo" class="container">
-		<section ng-controller="TitulosTesouroDiretoController">
-			<div class="jumbotron">
-				<h1 class="text-center">{{titulo}}</h1>
-			</div>
-
-			<div class="row">
-				<div class="col-md-12">
-					<form>
-						<div class="form-group">
-							<label for="filtroNome">Filtro por Nome</label> <input
-								id="filtroNome" class="form-control"
-								placeholder="filtrar pelo nome do título" ng-model="filtroNome" 
-								ng-model-options="{debounce: 1000}">
-						</div>
-					</form>
-				</div>
-				<!-- fim col-md-12 -->
-			</div>
-			<!-- fim row -->
-
-			<!-- https://docs.angularjs.org/api/ng/filter/filter -->
-			<tesouro-direto-item
-				ng-repeat="tituloTD in titulosTD | filter:{nome:filtroNome}:false"
-				id="{{tituloTD.id}}" nome="{{tituloTD.nome}}"
-				tipo="{{tituloTD.tipo}}"> </tesouro-direto-item>
-
-		</section>
+		<ng-view></ng-view>
 	</div>
 
 </body>

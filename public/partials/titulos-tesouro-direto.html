@@ -1,0 +1,29 @@
+<section ng-controller="TitulosTesouroDiretoController">
+
+	<div class="jumbotron" style='padding-top: 5px; padding-bottom: 5px;'>
+		<h1 class="text-center">{{titulo}}</h1>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<form>
+				<div class="form-group">
+					<label for="filtroNome">Filtro por Nome</label> <input
+						id="filtroNome" name="filtroNome" class="form-control"
+						autofocus="autofocus" placeholder="filtrar pelo nome do título"
+						ng-model="filtroNome" ng-model-options="{debounce: 1000}">
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-2">
+			<!-- https://docs.angularjs.org/api/ng/filter/filter -->
+			<tesouro-direto-item
+				ng-repeat="tituloTD in titulosTD | filter:{nome:filtroNome}:false"
+				id="{{tituloTD.id}}" nome="{{tituloTD.nome}}"
+				tipo="{{tituloTD.tipo}}"> </tesouro-direto-item>
+		</div>
+	</div>
+</section>
