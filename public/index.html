@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="ljbm">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<base href="/">
+<title>ljbmTesouroDireto</title>
+<!-- <link rel="stylesheet" href="css/reset.css"> -->
+<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+<!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+<!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+<link rel="stylesheet" href="css/bootstrap-flatly.css">
+<link rel="stylesheet" href="css/ljbm.css">
+
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/angular-resource.min.js"></script>
+<script src="js/lib/jquery.js"></script>
+<script src="js/lib/bootstrap.js"></script>
+
+<script src="js/main.js"></script>
+<script src="js/controllers/titulos-tesouro-direto-controller.js"></script>
+<script src="js/directives/minhas-diretivas.js"></script>
+
+</head>
+
+<body>
+	<header class="container">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-header" style="float: left">
+				<img class="navbar-brand" alt="ljbmInvest"
+					src="img/glyphicons-38-coins.png">
+			</div>
+			<button class="navbar-toggle" type="button"
+				data-target=".navbar-collapse" data-toggle="collapse">
+				<span class="glyphicon glyphicon-align-justify"></span>
+			</button>
+			<ul class="nav navbar-nav collapse navbar-collapse">
+				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li><a href="#" id="Ajuda"><span
+						class="glyphicon glyphicon-question-sign"></span></a></li>
+				<li><a href="#" id="TitulosTD"><span
+						class="glyphicon glyphicon-list-alt"></span></a></li>
+				<li><a href="#" id="Aplicacoes"><span
+						class="glyphicon glyphicon-bullhorn"></span></a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div id="corpo" class="container">
+		<section ng-controller="TitulosTesouroDiretoController">
+			<div class="jumbotron">
+				<h1 class="text-center">{{titulo}}</h1>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<form>
+						<input class="form-control"
+							placeholder="filtrar pelo nome do título">
+					</form>
+				</div>
+				<!-- fim col-md-12 -->
+			</div>
+
+			<!-- fim row -->
+			<tesouro-direto-item ng-repeat="tituloTD in titulosTD"
+				id="{{tituloTD.id}}" nome="{{tituloTD.nome}}"
+				tipo="{{tituloTD.tipo}}"> </tesouro-direto-item>
+
+		</section>
+	</div>
+
+</body>
+</html>
