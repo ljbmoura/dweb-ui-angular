@@ -1,12 +1,12 @@
-angular.module("ljbm").controller("TitulosTesouroDiretoController",
+angular.module('ljbm').controller('TitulosTesouroDiretoController',
 
-function($scope, $http) { // , "ngResource"
+function($scope, $http) { // , 'ngResource'
 	$scope.titulo = 'Titulos TD';
 	$scope.filtroNome = '';
 
 	$scope.titulosTD = []
 	// var recurso =
-	// $resource("http://localhost:9080/lab/rest/titulosTD/");
+	// $resource('http://localhost:9080/lab/rest/titulosTD/');
 	// recurso.query (
 	// function (retorno) {
 	// console.log('ok');

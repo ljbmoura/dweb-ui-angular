@@ -1,0 +1,29 @@
+<!-- public/partials/titulo-tesouro-direto.html -->
+<section>
+
+	<div class='page-header text-center'>
+		<h1>{{titulo}}</h1>
+	</div>
+
+	<form name='formulario' ng-submit='submeter()' class='row'>
+
+		<div class='col-md-12'>
+
+			<div class='form-group'>
+				<label for='id'>Id</label> <input id='id' name='id'
+					type='text' class='form-control' ng-model='tituloTD.id'>
+			</div>
+			<div class='form-group'>
+				<label for='nome'>Nome</label> <input id='nome' name='nome'
+					type='text' class='form-control' ng-model='tituloTD.nome'>
+			</div>
+			<div class='form-group'>
+				<label for='tipo'>Tipo</label> <input id='tipo' name='tipo'
+					type='text' class='form-control' ng-model='tituloTD.tipo'>
+			</div>
+			<button type='submit' class='btn btn-primary'>Salvar</button>
+			<a href='/titulosTD' class='btn btn-primary'>Voltar</a>
+		</div>
+
+	</form>
+</section>

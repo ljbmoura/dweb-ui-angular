@@ -1,29 +1,28 @@
-<section ng-controller="TitulosTesouroDiretoController">
+<section>
 
-	<div class="jumbotron" style='padding-top: 5px; padding-bottom: 5px;'>
-		<h1 class="text-center">{{titulo}}</h1>
+	<div class='jumbotron' style='padding-top: 5px; padding-bottom: 5px;'>
+		<h1 class='text-center'>{{titulo}}</h1>
 	</div>
 
-	<div class="row">
-		<div class="col-md-12">
+	<div class='row'>
+		<div class='col-md-12'>
 			<form>
-				<div class="form-group">
-					<label for="filtroNome">Filtro por Nome</label> <input
-						id="filtroNome" name="filtroNome" class="form-control"
-						autofocus="autofocus" placeholder="filtrar pelo nome do título"
-						ng-model="filtroNome" ng-model-options="{debounce: 1000}">
+				<div class='form-group input-group'>
+					<span class='input-group-btn'> <a href='/titulosTD/novo'
+						class='btn btn-primary' type='button'>Novo Título TD</a></span> <input
+						id='filtroNome' name='filtroNome' class='form-control'
+						autofocus='autofocus' placeholder='filtrar pelo nome do título'
+						ng-model='filtroNome' ng-model-options='{debounce: 1000}'>
 				</div>
 			</form>
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col-md-2">
-			<!-- https://docs.angularjs.org/api/ng/filter/filter -->
-			<tesouro-direto-item
-				ng-repeat="tituloTD in titulosTD | filter:{nome:filtroNome}:false"
-				id="{{tituloTD.id}}" nome="{{tituloTD.nome}}"
-				tipo="{{tituloTD.tipo}}"> </tesouro-direto-item>
-		</div>
+	<div class='row'>
+		<!-- https://docs.angularjs.org/api/ng/filter/filter -->
+		<tesouro-direto-item class='col-md-2'
+			ng-repeat='tituloTD in titulosTD | filter:{nome:filtroNome}:false'
+			id='{{tituloTD.id}}' nome='{{tituloTD.nome}}'
+			tipo='{{tituloTD.tipo}}'> </tesouro-direto-item>
 	</div>
 </section>

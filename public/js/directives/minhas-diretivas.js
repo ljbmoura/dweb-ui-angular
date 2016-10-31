@@ -1,5 +1,5 @@
 /**
- * 
+ * módulo minhas diretivas 
  */
 
 angular.module('minhasDiretivas', [])
