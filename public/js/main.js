@@ -2,23 +2,24 @@
  * módulo principal ljbm
  */
 
-angular.module('ljbm', [ 'minhasDiretivas', 'ngRoute' ]) // 'ngResource'
+angular.module('ljbm', [ 'minhasDiretivas', 'ngRoute']) // 'ngResource'
 
-.config(function($routeProvider, $locationProvider) {
+.config(function($routeProvider, $locationProvider, $httpProvider) {
+
+	$httpProvider.defaults.headers.get = {
+		'My-Header' : 'especial'
+	};
+	$httpProvider.defaults.withCredentials = true;
 
 	$locationProvider.html5Mode(true);
 
 	$routeProvider.when('/titulosTD', {
 		templateUrl : '/partials/titulos-tesouro-direto.html',
 		controller : 'TitulosTesouroDiretoController'
-	});
-	
-	$routeProvider.when('/titulosTD/novo', {
+	}).when('/titulosTD/novo', {
 		templateUrl : '/partials/titulo-tesouro-direto.html',
 		controller : 'TituloTesouroDiretoController'
-	});
-
-	$routeProvider.otherwise({
+	}).otherwise({
 		templateUrl : '/partials/destino-invalido.html'
 	});
 

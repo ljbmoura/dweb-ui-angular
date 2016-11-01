@@ -16,11 +16,13 @@ function($scope, $http) { // , 'ngResource'
 	// console.log('erro' + erro)
 	// }
 	// );
-	var promessa = $http.get('http://localhost:9080/lab/rest/titulosTD/');
+	var promessa = $http.get('http://localhost:9080/lab/rest/titulosTD/'
+			//, {withCredentials: true}
+			);
 	promessa.success(function(retornoOk) {
 //		console.log(retornoOk);
 		$scope.titulosTD = retornoOk;
 	}).error(function(retornoErro) {
-		console.log('erro' + retornoErro)
+		console.log('erro: ' + (retornoErro == null ? 'desconhecido' : retornoErro))
 	});
 });
