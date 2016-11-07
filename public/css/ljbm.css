@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+/* .navbar { */
+/* 	margin: 0; */
+/* } */
+
+.navbar .glyphicon {
+	color: yellow;
+}
+
+#corpo {
+	top: 70px;
+	position: relative;
+}
