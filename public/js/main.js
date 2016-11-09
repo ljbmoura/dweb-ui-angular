@@ -3,7 +3,7 @@
  */
 
 angular.module('ljbm',
-		[ 'minhasDiretivas', 'ngRoute', 'ngResource', 'ngCookies' ])
+		[ 'minhasDiretivas', 'ngRoute', 'ngResource', 'ngCookies','ngMaterial' ])
 
 .config(function($routeProvider, $locationProvider, $httpProvider) {
 

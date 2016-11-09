@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt-br" ng-app="ljbm">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <base href="/">
 <title>ljbmTesouroDireto</title>
 <!-- <link rel="stylesheet" href="css/reset.css"> -->
@@ -11,13 +11,23 @@
 <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
 <link rel="stylesheet" href="css/bootstrap-flatly.css">
 <link rel="stylesheet" href="css/ljbm.css">
+<link rel="stylesheet" href="css/angular-material.min.css">
+</head>
 
 <script src="lib/angular.js"></script>
+<script src="lib/angular-animate.js"></script>
 <script src="lib/angular-cookies.js"></script>
 <script src="lib/angular-route.js"></script>
 <script src="lib/angular-resource.js"></script>
+<script src="lib/angular-aria.js"></script>
+<!-- <script src="lib/angular-messages.js"></script> -->
+
+<!-- bootstrap requer Jquery -->
 <script src="lib/jquery.js"></script>
 <script src="lib/bootstrap.js"></script>
+
+<!-- Angular Material Library -->
+<script src="lib/angular-material.js"></script>
 
 
 <script src="js/main.js"></script>
@@ -27,7 +37,7 @@
 <script src="js/directives/minhas-diretivas.js"></script>
 </head>
 
-<body>
+<body ng-app="ljbm" ng-cloak>
 
 	<header class="container">
 		<nav class="navbar navbar-inverse navbar-fixed-top">

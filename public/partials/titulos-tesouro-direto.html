@@ -4,8 +4,8 @@
 		<h1 class='text-center'>{{titulo}}</h1>
 	</div>
 
-	<div class='row'>
-		<div class='col-md-12'>
+	<div layout="row" >
+		<div flex='100'>
 			<form>
 				<div class='form-group input-group'>
 					<span class='input-group-btn'> <a href='/titulosTD/novo'
@@ -18,11 +18,13 @@
 		</div>
 	</div>
 
-	<div class='row'>
-		<!-- https://docs.angularjs.org/api/ng/filter/filter -->
-		<tesouro-direto-item class='col-md-2'
+	<!-- 	<div class='row'>  -->
+	<div layout="row" layout-wrap>
+		<!-- 		<div class='col-md-2'> -->
+		<tesouro-direto-item flex="20"
 			ng-repeat='tituloTD in titulosTD | filter:{nome:filtroNome}:false'
 			id='{{tituloTD.id}}' nome='{{tituloTD.nome}}'
 			tipo='{{tituloTD.tipo}}'> </tesouro-direto-item>
 	</div>
+
 </section>
