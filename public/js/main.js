@@ -2,32 +2,54 @@
  * módulo principal ljbm
  */
 
-angular.module('ljbm',
-		[ 'minhasDiretivas', 'ngRoute', 'ngResource', 'ngCookies','ngMaterial' ])
+(function() {
 
-.config(function($routeProvider, $locationProvider, $httpProvider) {
+	var app = angular.module('ljbm', [ 'minhasDiretivas', 'ngRoute',
+			'ngResource', 'ngCookies', 'ngMaterial' ]);
 
-	$locationProvider.html5Mode(true);
+	app.config(ConfiguracaoGeral);
+	app.config(ConfiguracaoTema);
 
-/*	$httpProvider.defaults.headers.post = {
-		'Content-Type' : 'application/x-www-form-urlencoded'
-//		,'My-Header' : 'especial2'
-	};
-*/
-	$httpProvider.defaults.withCredentials = true;
+	function ConfiguracaoGeral($routeProvider, $locationProvider, $httpProvider) {
 
-	$routeProvider.when('/titulosTD', {
-		templateUrl : '/partials/titulos-tesouro-direto.html',
-		controller : 'TitulosTesouroDiretoController'
-	}).when('/titulosTD/novo', {
-		templateUrl : '/partials/titulo-tesouro-direto.html',
-		controller : 'TituloTesouroDiretoController'
-	}).otherwise({
-		templateUrl : '/partials/destino-invalido.html'
-	});
+		$locationProvider.html5Mode(true);
 
-});
+		/*
+		 * $httpProvider.defaults.headers.post = { 'Content-Type' :
+		 * 'application/x-www-form-urlencoded' // ,'My-Header' : 'especial2' };
+		 */
+		$httpProvider.defaults.withCredentials = true;
 
+		$routeProvider.when('/titulosTD', {
+			templateUrl : '/partials/titulos-tesouro-direto.html',
+			controller : 'TitulosTesouroDiretoController'
+		}).when('/titulosTD/novo', {
+			templateUrl : '/partials/titulo-tesouro-direto.html',
+			controller : 'TituloTesouroDiretoController'
+		}).otherwise({
+			templateUrl : '/partials/destino-invalido.html'
+		});
+
+	}
+
+	function ConfiguracaoTema($mdThemingProvider) {
+		$mdThemingProvider.theme('default').primaryPalette('blue-grey', {
+			'default' : '900',
+			'hue-1' : '500',
+			'hue-2' : '800',
+			'hue-3' : '300'
+		}).accentPalette('teal', {
+			'default' : '900',
+			'hue-1' : '500',
+			'hue-2' : '800',
+			'hue-3' : '100'
+		}).warnPalette('red').backgroundPalette('grey');
+
+		$mdThemingProvider.theme('light').primaryPalette('grey')
+				.backgroundPalette('grey');
+	}
+
+})();
 /**
  * angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute',
  * 'ngResource', 'meusServicos'])
