@@ -5,7 +5,7 @@
 (function() {
 
 	var app = angular.module('ljbm', [ 'minhasDiretivas', 'ngRoute',
-			'ngResource', 'ngCookies', 'ngMaterial' ]);
+			'ngResource', 'ngCookies', 'ngMaterial', 'ngMessages' ]);
 
 	app.config(ConfiguracaoGeral);
 	app.config(ConfiguracaoTema);

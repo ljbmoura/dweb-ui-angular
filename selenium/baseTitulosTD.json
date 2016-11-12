@@ -1,0 +1,11 @@
+[
+{nome: 'Tesouro IPCA+ 2019 (NTNB Princ)', tipo: '1', id: '1'}, 
+{nome: 'Tesouro IPCA+ 2024 (NTNB Princ)', tipo: '1', id: '2'}, 
+{nome: 'Tesouro IPCA+ 2035 (NTNB Princ)', tipo: '1', id: '3'}, 
+{nome: 'Tesouro Prefixado 2017 (LTN)', tipo: '2', id: '4'}, 
+{nome: 'Tesouro Prefixado 2018 (LTN)', tipo: '2', id: '5'}, 
+{nome: 'Tesouro Prefixado 2019 (LTN)', tipo: '2', id: '6'}, 
+{nome: 'Tesouro Selic 2021 (LFT)', tipo: '3', id: '7'}, 
+{nome: 'Tesouro IPCA+ com Juros Semestrais 2024 (NTNB)', tipo: '1', id: '8'}, 
+{nome: 'Tesouro IPCA+ com Juros Semestrais 2045 (NTNB)', tipo: '1', id: '9'}
+]

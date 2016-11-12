@@ -1,45 +1,56 @@
 <!-- public/partials/titulo-tesouro-direto.html -->
 
 <!-- versão Angular Material -->
-<section>
-	<md-toolbar class="md-primary md-toolbar-tools"
-		layout-align="center center" layout-padding> Entrar no
-	sistema de representantes </md-toolbar>
+<div layout='column' class='md-inline-form'>
+	<md-content layout-padding>
 
-	<div class='page-header text-center'>
+	<div>
 		<h1>{{titulo}} (Angular Material)</h1>
 	</div>
 
-	<form name='formulario' ng-submit='submeter()' class='row'>
+	<form name='form' ng-submit='submeter()'>
+		<md-input-container class='md-block'> <label
+			for='nome'>Nome</label> <input id='nome' name='nome'
+			placeholder='descrição do título' md-maxlength='50' required
+			md-no-asterisk ng-model='tituloTD.nome'>
+		<div ng-messages='form.nome.$error'>
+			<div ng-message='required'>This is required.</div>
+			<div ng-message='md-maxlength'>Máximo 30 letras.</div>
+		</div>
+		</md-input-container>
 
-		<div class='col-md-12'>
+		<div layout='row'>
+			<md-input-container flex='50' class='md-block'>
+			<label for='id'>Id</label> <input id='id' name='id'
+				ng-pattern='/^[0-9]{0,5}$/' md-maxlength='5' placeholder="12345"
+				ng-model='tituloTD.id'>
+			<div ng-messages='form.id.$error' role='alert' multiple>
+				<div ng-message='required'>This is required.</div>
+				<div ng-message='md-maxlength'>Máximo 5 digitos.</div>
+				<div ng-message='pattern' class='my-message'>Id deve conter
+					apenas números</div>
+			</div>
+			</md-input-container>
 
-			<div class='form-group'>
-				<label for='id'>Id</label> <input id='id' name='id' type='text'
-					class='form-control' ng-model='tituloTD.id'>
-			</div>
-			<div class='form-group'>
-				<label for='nome'>Nome</label> <input id='nome' name='nome'
-					type='text' class='form-control' ng-model='tituloTD.nome'>
-			</div>
-			<div class='form-group'>
-				<label for='tipo'>Tipo</label> <input id='tipo' name='tipo'
-					type='text' class='form-control' ng-model='tituloTD.tipo'>
-			</div>
-			<button type='submit' class='btn btn-primary'>Salvar</button>
-			<a href='/titulosTD' class='btn btn-primary'>Voltar</a>
-			<div layout="row" layout-align="end end">
-				<md-button aria-label="Entrar" class="md-raised md-primary md-hue-2"
-					ng-click="ctrl.login()" ng-disabled="!tituloTD.id || !tituloTD.nome">Entrar</md-button>
-				<md-button aria-label="Cancelar"
-					class="md-raised md-primary md-hue-2" ng-click="ctrl.cancelar()">Cancelar</md-button>
-			</div>
+			<md-input-container flex='50'> <label for='tipo'>Tipo</label>
+			<md-select id='tipo' name='tipo' ng-model='tituloTD.tipo' required>
 
+			<md-option id='opcaoTipo1' ng-value='1'>IPCA</md-option> <md-option
+				id='opcaoTipo2' ng-value='2'>Prefixado</md-option> <md-option
+				id='opcaoTipo3' ng-value='3'>SELIC</md-option> </md-select> </md-input-container>
 		</div>
 
+		<div layout='row' layout-align='end end'>
+			<md-button id='salvar' type='submit' aria-label='Salvar'
+				class='md-raised md-primary md-hue-2'
+				ng-disabled='!tituloTD.tipo || !tituloTD.nome'>Salvar</md-button>
 
+			<md-button id='voltar' aria-label='Voltar'
+				class='md-raised md-primary md-hue-2' href='/titulosTD'>Voltar</md-button>
+		</div>
 	</form>
-</section>
+	</md-content>
+</div>
 
 <!-- versão bootstrap -->
 <!-- <section>
