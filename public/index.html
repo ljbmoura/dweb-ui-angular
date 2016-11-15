@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="ljbm">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,8 @@
 <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
 <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
 <!-- <link rel="stylesheet" href="css/bootstrap-flatly.css"> -->
-<link rel="stylesheet" href="css/ljbm.css">
+<!-- <link rel="stylesheet" href="css/ljbm.css"> -->
+<link rel="stylesheet" href="css/gridlist.css">
 <link rel="stylesheet" href="css/angular-material.min.css">
 </head>
 
@@ -23,8 +24,8 @@
 <script src="lib/angular-messages.js"></script>
 
 <!-- bootstrap requer Jquery -->
-<script src="lib/jquery.js"></script>
-<script src="lib/bootstrap.js"></script>
+<!-- <script src="lib/jquery.js"></script> -->
+<!-- <script src="lib/bootstrap.js"></script> -->
 
 <!-- Angular Material Library -->
 <script src="lib/angular-material.js"></script>
@@ -37,10 +38,10 @@
 <script src="js/directives/minhas-diretivas.js"></script>
 </head>
 
-<body ng-app="ljbm" ng-cloak>
+<body  >
 
-	<header class="container">
-		<nav class="navbar navbar-inverse navbar-fixed-top">
+	<!-- <header class="container">-->
+		<!-- <nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-header" style="float: left">
 				<img class="navbar-brand" alt="ljbmInvest"
 					src="img/glyphicons-38-coins.png">
@@ -58,12 +59,14 @@
 				<li><a href="/aplicacoes" id="Aplicacoes"><span
 						class="glyphicon glyphicon-bullhorn"></span></a></li>
 			</ul>
-		</nav>
-	</header>
+		</nav> -->
+	<!--</header>-->
 
-	<div id="corpo" class="container">
+<!-- 	<div id="corpo"> -->
+	<section>
 		<ng-view></ng-view>
-	</div>
+	</section>
+<!-- 	</div> -->
 
 </body>
 </html>

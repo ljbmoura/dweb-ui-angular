@@ -1,10 +1,10 @@
-<section>
-
-	<div class='jumbotron' style='padding-top: 5px; padding-bottom: 5px;'>
+<div>
+	<!-- 	<div class='jumbotron' style='padding-top: 5px; padding-bottom: 5px;'>
 		<h1 class='text-center'>{{titulo}}</h1>
-	</div>
+	</div> -->
+	<h1 class='text-center'>{{titulo}}</h1>
 
-	<div layout="row" >
+	<div layout="row">
 		<div flex='100'>
 			<form>
 				<div class='form-group input-group'>
@@ -17,14 +17,22 @@
 			</form>
 		</div>
 	</div>
+	<div class="gridListTitulosTD">
+		<md-grid-list md-cols="4" md-row-height="4:3" md-gutter="8px">
 
-	<!-- 	<div class='row'>  -->
-	<div layout="row" layout-wrap>
-		<!-- 		<div class='col-md-2'> -->
-		<tesouro-direto-item flex="20"
-			ng-repeat='tituloTD in titulosTD | filter:{nome:filtroNome}:false'
-			id='{{tituloTD.id}}' nome='{{tituloTD.nome}}'
-			tipo='{{tituloTD.tipo}}'> </tesouro-direto-item>
+		<md-grid-tile
+			ng-repeat="tituloTD in titulosTD | filter:{nome:filtroNome}:false"
+			md-rowspan="1" md-colspan="1" ng-class="estiloTile(tituloTD.tipo)">
+		<h3>{{tituloTD.id}}: {{tituloTD.nome}}</h3>
+		<md-grid-tile-footer>
+		<h3>Tipo: {{tituloTD.tipo}}</h3>
+		</md-grid-tile-footer> </md-grid-tile> </md-grid-list>
 	</div>
+	<!-- <tesouro-direto-item
+		ng-repeat='tituloTD in titulosTD | filter:{nome:filtroNome}:false'
+		id='{{tituloTD.id}}' nome='{{tituloTD.nome}}' tipo='{{tituloTD.tipo}}'>
+		
+	</tesouro-direto-item> -->
+</div>
 
-</section>
+
